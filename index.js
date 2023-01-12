@@ -29,13 +29,6 @@ const questions = [
         validate: (value) => { if (value) { return true } else { return 'Usage guide needed.' } },
     },
     {
-        type: 'list',
-        message: "What license(s) did you use for your app?",
-        name: 'license',
-        list: []
-        validate: (value) => { if (value) { return true } else { return 'license needed.' } },
-    },
-    {
         type: 'input',
         message: "Who all worked on the app, and how did they contribute?",
         name: 'credits',
@@ -48,12 +41,24 @@ const questions = [
         name: 'tests',
         validate: (value) => { if (value) { return true } else { return 'Tests needed.' } },
     },
-    // What is questions
+    {
+        type: 'list',
+        message: "What license(s) did you use for your app?",
+        name: 'license',
+        list: []
+        validate: (value) => { if (value) { return true } else { return 'license needed.' } },
+    },
     {
         type: 'input',
-        message: "What is the title of your project?",
+        message: "What is your Github username?",
+        name: 'github',
+        validate: (value) => { if (value) { return true } else { return 'Username needed.' } },
+    },
+    {
+        type: 'input',
+        message: "For any qeustion, feel free to email",
         name: 'questions',
-        validate: (value) => { if (value) { return true } else { return 'Questions needed.' } },
+        validate: (value) => { if (value) { return true } else { return 'Email needed.' } },
     },
 ];
 
