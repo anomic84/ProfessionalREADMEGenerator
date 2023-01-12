@@ -65,7 +65,7 @@ const questions = [
     {
         type: 'input',
         message: "For any qeustion, feel free to email",
-        name: 'questions',
+        name: 'email',
         validate: (questionsInput) => { if (questionsInput) { return true } else { return 'Email needed.' } },
     },
 ];
