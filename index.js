@@ -46,14 +46,14 @@ const questions = [
         type: 'list',
         message: "What license(s) did you use for your app?",
         name: 'license',
-        list: ['Apache 2.0',
+        choices: ['Apache 2.0',
             'BSD 3-Clause',
             'BSD 2-Clause',
             'GNU GPL',
             'GNU LGPL',
             'MIT',
             'MPL 2.0'
-        ]
+        ],
         validate: (licenseInput) => { if (licenseInput) { return true } else { return 'license needed.' } },
     },
     {
@@ -71,11 +71,21 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
+function writeToFile(inputs, data) { 
+    fs.writeFile('log.txt', data, (err) =>
+    err ? console.error(err) : console.log('Success!'))
+}
 // TODO: Create a function to initialize app
-function init() { }
+function init() {
+    inquirer.prompt(questions)
+        .then(function (data) {
+            console.log(data);
+            var inputs = generateMarkdown(data);
+            writeToFile(inputs)
+        });
+}
 
 // Function call to initialize app
 init();
 
+module.exports = questions;
