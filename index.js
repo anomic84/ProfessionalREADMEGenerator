@@ -53,20 +53,20 @@ const questions = [
             'GNU LGPL',
             'MIT',
             'MPL 2.0'
-            ]
-        validate: (value) => { if (value) { return true } else { return 'license needed.' } },
+        ]
+        validate: (licenseInput) => { if (licenseInput) { return true } else { return 'license needed.' } },
     },
     {
         type: 'input',
         message: "What is your Github username?",
         name: 'github',
-        validate: (value) => { if (value) { return true } else { return 'Username needed.' } },
+        validate: (githubInput) => { if (githubInput) { return true } else { return 'Username needed.' } },
     },
     {
         type: 'input',
         message: "For any qeustion, feel free to email",
         name: 'questions',
-        validate: (value) => { if (value) { return true } else { return 'Email needed.' } },
+        validate: (questionsInput) => { if (questionsInput) { return true } else { return 'Email needed.' } },
     },
 ];
 
@@ -79,25 +79,3 @@ function init() { }
 // Function call to initialize app
 init();
 
-
-
-
-
-
-
-
-
-
-
-
-
-// licenses
-// Apache License 2.0
-// BSD 3-Clause "New" or "Revised" license
-// BSD 2-Clause "Simplified" or "FreeBSD" license
-// GNU General Public License (GPL)
-// GNU Library or "Lesser" General Public License (LGPL)
-// MIT license
-// Mozilla Public License 2.0
-// Common Development and Distribution License
-// Eclipse Public License version 2.0
