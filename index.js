@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -37,7 +38,7 @@ const questions = [
     // what is tests?
     {
         type: 'input',
-        message: "How did you test your project?",
+        message: "What command should be ran to test the app?",
         name: 'tests',
         validate: (value) => { if (value) { return true } else { return 'Tests needed.' } },
     },
@@ -45,7 +46,14 @@ const questions = [
         type: 'list',
         message: "What license(s) did you use for your app?",
         name: 'license',
-        list: []
+        list: ['Apache 2.0',
+            'BSD 3-Clause',
+            'BSD 2-Clause',
+            'GNU GPL',
+            'GNU LGPL',
+            'MIT',
+            'MPL 2.0'
+            ]
         validate: (value) => { if (value) { return true } else { return 'license needed.' } },
     },
     {
@@ -70,3 +78,26 @@ function init() { }
 
 // Function call to initialize app
 init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// licenses
+// Apache License 2.0
+// BSD 3-Clause "New" or "Revised" license
+// BSD 2-Clause "Simplified" or "FreeBSD" license
+// GNU General Public License (GPL)
+// GNU Library or "Lesser" General Public License (LGPL)
+// MIT license
+// Mozilla Public License 2.0
+// Common Development and Distribution License
+// Eclipse Public License version 2.0
