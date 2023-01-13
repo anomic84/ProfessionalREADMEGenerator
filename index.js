@@ -52,7 +52,8 @@ const questions = [
             'GNU GPL',
             'GNU LGPL',
             'MIT',
-            'MPL 2.0'
+            'MPL 2.0',
+            'None'
         ],
         validate: (licenseInput) => { if (licenseInput) { return true } else { return 'license needed.' } },
     },
@@ -71,9 +72,9 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(inputs, data) { 
-    fs.writeFile('log.txt', data, (err) =>
-    err ? console.error(err) : console.log('Success!'))
+function writeToFile(fileName, data) {
+    fs.writeFile(`${fileName}`, (data), (err) =>
+        err ? console.error(err) : console.log('Success!'))
 }
 // TODO: Create a function to initialize app
 function init() {
@@ -81,7 +82,7 @@ function init() {
         .then(function (data) {
             console.log(data);
             var inputs = generateMarkdown(data);
-            writeToFile(inputs)
+            writeToFile('GeneratedREADME.md', inputs)
         });
 }
 
